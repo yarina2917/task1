@@ -3,9 +3,7 @@ import Board from './components/Board/Board';
 
 class App extends Component {
   render() {
-    return (
-        <Board/>
-    );
+    return <Board/>
   }
 }
 

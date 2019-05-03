@@ -9,7 +9,7 @@ const textTag = ({text, coordinates, editTag, handleMouseMove}) => {
         document.onmousemove = (e) => {
             handleMouseMove(e)
         };
-        document.onmouseup = function () {
+        document.onmouseup = () => {
             document.onmousemove = null;
             document.onmouseup = null;
         };

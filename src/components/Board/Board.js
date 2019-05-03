@@ -57,12 +57,11 @@ class Board extends React.Component {
                     text: 'test',
                     edit: true,
                     x: xCoord,
-                    y: yCoord,
-                    zIndex: 1
+                    y: yCoord
                 });
                 this.setState({
-                    currentEdit: newArr.length - 1,
                     arr: newArr,
+                    currentEdit: newArr.length - 1
                 })
             }
         }
@@ -71,6 +70,9 @@ class Board extends React.Component {
 
     editTagHandler = (index) => {
         const newArr = [...this.state.arr];
+        if (this.state.currentEdit != null) {
+            newArr[this.state.currentEdit].edit = false;
+        }
         newArr[index].edit = true;
         this.setState({
             arr: newArr,
